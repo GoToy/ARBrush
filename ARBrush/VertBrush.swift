@@ -35,8 +35,8 @@ class VertBrush {
     var prevPerpVec = SCNVector3Zero
     
     
-    var light = Light(color: (1.0,1.0,1.0), ambientIntensity: 0.1,
-                      direction: (0.0, 0.0, 1.0), diffuseIntensity: 0.8,
+    var light = Light(color: (255,255,0), ambientIntensity: 0.1,
+                      direction: (0.0, 0.0, 0), diffuseIntensity: 0.8,
                       shininess: 10, specularIntensity: 2, time: 0.0)
     
     
@@ -64,9 +64,10 @@ class VertBrush {
         
         func toVert(_ pp:SCNVector3, _ nn:SCNVector3 ) -> Vertex {
             return Vertex(x: pp.x, y: pp.y, z: pp.z,
-                          r: 1.0, g: 0.5, b: 0.1, a: 1.0,
+                          r: 1.0, g: 0.0, b: 0.0, a: 1.0,
                           s: 0, t: 0,
                           nX: nn.x, nY: nn.y, nZ: nn.z)
+                          //  nX: 1, nY: 1, nZ: 1)
         }
         
         let pidx = points.count - 1
